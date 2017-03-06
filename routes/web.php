@@ -20,5 +20,6 @@ Route::get('/users',['middleware' => 'cors',function(){
 }]);
 
 Route::post('/users',['middleware' => 'cors',function(\Illuminate\Http\Request $request){
+//    return $request->all();
     return \App\User::create($request->all());
 }]);
