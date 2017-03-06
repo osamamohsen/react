@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/users',function(){
-    return \App\User::all();
+    return ['users'=>\App\User::all()];
 });
 Route::post('/users',function(\Illuminate\Http\Request $request){
     return \App\User::create($request->all());
