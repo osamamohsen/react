@@ -15,9 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/users',function(){
+Route::get('/users',['middleware' => 'cors',function(){
     return ['users'=>\App\User::all()];
-});
-Route::post('/users',function(\Illuminate\Http\Request $request){
+}]);
+
+Route::post('/users',['middleware' => 'cors',function(\Illuminate\Http\Request $request){
     return \App\User::create($request->all());
-});
+}]);
